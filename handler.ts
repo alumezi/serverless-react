@@ -15,6 +15,7 @@ export const serve = async (event: APIGatewayEvent, _context: Context): Promise<
   } catch (error) {
     // Custom error handling for server-side errors
     // TODO: Prettify the output, include the callstack, e.g. by using `youch` to generate beautiful error pages
+    //changes
     console.error(error);
     return {
       statusCode: 500,
