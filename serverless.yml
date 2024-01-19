@@ -6,14 +6,6 @@ variablesResolutionMode: 20210326
 disabledDeprecations:
   - CLI_OPTIONS_SCHEMA # some Serverless plugins haven't been updated yet and generate warnings
 
-params:
-  dev:
-    IMPORTANT: dev-123
-  qa:
-    IMPORTANT: qa-123
-  prod:
-    IMPORTANT: prod-123
-
 provider:
   name: aws
   runtime: nodejs18.x
@@ -31,7 +23,7 @@ provider:
     SERVERLESS_PROJECT: ${self:service}
     SERVERLESS_REGION: ${self:provider.region}
     SERVERLESS_STAGE: ${self:provider.stage}
-    IMPORTANT: ${param:IMPORTANT}
+    IMPORTANT: ${param:important}
     APP_DIST_URL: ${self:custom.distBucketUrl.${self:provider.region}, self:custom.distBucketUrl.default}
     APP_PUBLIC_URL: ${self:custom.distBucketUrl.${self:provider.region}, self:custom.distBucketUrl.default}
     APIGATEWAY_URL:
