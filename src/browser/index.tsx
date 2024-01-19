@@ -15,10 +15,10 @@ import { Config } from "../server/config";
 import App from "../App";
 
 const config = (window as any).__CONFIG__ as Config;
-delete (window as any).__CONFIG__;
 
 /** Components added here will _only_ be loaded in the web browser, never for server-side rendering */
 const render = () => {
+  console.log("BROWSER ENV VAR", process.env.IMPORTANT);
   hydrate(
     <>
       {/* The configuration is the outmost component. This allows us to read the configuration even in the theme */}
